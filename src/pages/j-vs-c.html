@@ -1,0 +1,187 @@
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Juego de Tres en Raya</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="../css/play-page.css" />
+    <link rel="stylesheet" href="../css/modals.css">
+    <link rel="stylesheet" href="../css/styles.css">nk
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Roboto:wght@300;400;700;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+   <div class="game">
+    
+    <div class="controls">
+        <img class="icon-back" src="../svg/Icon ionic-md-arrow-back.svg" alt="ir atrás" onclick="window.location.href='../../index.html'"/>
+        <img class="icon-reset" src="../svg/Icon ionic-md-refresh.svg" alt="Reiniciar el juego" id="reset-game"/>
+    </div>
+
+    <div class="content-play">
+        <div class="players">
+
+          <div class="player-1">
+            <h3 class="player-title" id="player-name"></h3>
+            <div class="avatar player">
+              <h1>JE</h1>
+              <div class="symbol s-x">
+                <img src="../svg/x.svg" alt="">
+              </div>
+            </div>
+          </div>
+
+          <h2 class="vs">VS</h2>
+
+          <div class="player-2">
+            <h3 class="player-title">Computadora</h3>
+            <div class="avatar cpu">
+              <h1>CPU</h1>
+              <div class="symbol s-0">
+                <img src="../svg/0.svg" alt="">
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="board">
+          <div class="board-score">
+
+            <div class="player-1">
+              <h2>JE</h2>
+              <p id="player1-score">0 Ganadas</p>
+            </div>
+
+            <div class="player-2">
+              <h2>CPU</h2>
+              <p id="player2-score">0 Ganadas</p>
+            </div>
+
+            <div class="draw">
+              <img src="../svg/Icon map-lawyer.svg" alt="" />
+              <p id="draw-score">0 Empates</p>
+            </div>
+          </div>
+
+          <div class="content-cells">
+              <div class="cell" data-index="0"></div>
+              <div class="cell" data-index="1"></div>
+              <div class="cell" data-index="2"></div>
+              <div class="cell" data-index="3"></div>
+              <div class="cell" data-index="4"></div>
+              <div class="cell" data-index="5"></div>
+              <div class="cell" data-index="6"></div>
+              <div class="cell" data-index="7"></div>
+              <div class="cell" data-index="8"></div>
+          </div>
+        </div>
+      </div>
+   </div>
+
+   <div id="win-modal" class="modal">
+    <div class="modal-content">
+        <img class="modal-icon" src="../svg/cup.svg" alt="Cup">
+        <h2 class="modal-title">Victoria</h2>
+        <p class="player-name"></p>
+        <div class="board-score">
+          <div class="player-1">
+            <h2>JE</h2>
+            <p id="player1-score-modal-win">0 Ganadas</p>
+          </div>
+
+          <div class="player-2">
+            <h2>CPU</h2>
+            <p id="player2-score-modal-win">0 Ganadas</p>
+          </div>
+
+          <div class="draw">
+            <img src="../svg/Icon map-lawyer.svg" alt="" />
+            <p id="draw-score-modal-win">0 Empates</p>
+          </div>
+        </div>
+       <div class="btns-modal">
+        <button class="exit" id="exit-win">Salir</button>
+        <button class="next" id="next-round-win">Proximo Round</button>
+       </div>
+    </div>
+   </div> 
+
+   <div id="lose-modal" class="modal">
+    <div class="modal-content">
+        <img class="modal-icon-lose"  src="../svg/loser.svg" alt="loser">
+        <h2 class="modal-title">Perdiste</h2>
+        <p class="player-name"></p>
+        <div class="board-score">
+          <div class="player-1">
+            <h2></h2>
+            <p id="player1-score-modal-lose">0 Ganadas</p>
+          </div>
+
+          <div class="player-2">
+            <h2>CPU</h2>
+            <p id="player2-score-modal-lose">0 Ganadas</p>
+          </div>
+
+          <div class="draw">
+            <img src="../svg/Icon map-lawyer.svg" alt="" />
+            <p id="draw-score-modal-lose">0 Empates</p>
+          </div>
+        </div>
+       <div class="btns-modal">
+        <button class="exit" id="exit-lose">Salir</button>
+        <button class="next" id="next-round-lose">Proximo Round</button>
+       </div>
+    </div>
+   </div>
+
+   <div id="draw-modal" class="modal">
+    <div class="modal-content">
+        <img class="modal-icon-lose"  src="../svg/Draw.svg" alt="loser">
+        <h2 class="modal-title">Empate</h2>
+        <p class="player-name">El juego quedó empate</p>
+        <div class="board-score">
+          <div class="player-1">
+            <h2></h2>
+            <p id="player1-score-modal-draw">0 Ganadas</p>
+          </div>
+
+          <div class="player-2">
+            <h2>CPU</h2>
+            <p id="player2-score-modal-draw">0 Ganadas</p>
+          </div>
+
+          <div class="draw">
+            <img src="../svg/Icon map-lawyer.svg" alt="" />
+            <p id="draw-score-modal-draw">0 Empates</p>
+          </div>
+        </div>
+       <div class="btns-modal">
+        <button class="exit" id="exit-draw">Salir</button>
+        <button class="next" id="next-round-draw">Proximo Round</button>
+       </div>
+    </div>
+   </div>
+
+   <div id="reset-modal" class="modal">
+    <div class="modal-content" id="modal-content-reset">
+        <h2 class="modal-title-reset">¿Seguro que deseas <br> reiniciar la partida?</h2>
+
+
+       <div class="btns-modal">
+        <button class="exit" id="exit-reset">Cancelar</button>
+        <button class="next" id="reset-game-modal">Reiniciar partida</button>
+       </div>
+    </div>
+   </div>
+   
+   <script type="module" src="../js/game-cpu.js"></script>
+  </body>
+</html>

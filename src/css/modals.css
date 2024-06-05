@@ -1,0 +1,183 @@
+.modal {
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    color: #fff;
+    background-color: rgba(0,0,0,0.5); 
+
+    
+  }
+
+.modal-content {
+    background-image: url(../img/bg-modal.png);
+    background-position: top;
+    background-size: cover;
+    width: 580px;
+    height: 500px;
+    padding: 20px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+
+    transform: scale(0.1);
+    opacity: 0;
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+  
+}
+
+.modal.show .modal-content {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.modal-title{
+    font-size: 2em;
+    font-weight: 700;
+    margin: 10px 0px;
+    text-transform: uppercase;
+}
+
+.modal-icon{
+    width: 150px;
+}
+
+.modal-icon-lose{
+    width: 200px;
+}
+
+/* Modal reset */
+#modal-content-reset{
+    height: 300px;
+    width: 540px;
+}
+
+.modal-title-reset{
+    font-weight: 300;
+    text-align: center;
+    font-size: 25px;
+}
+
+.player-name{
+    margin: 0px 0px 20px 0px;
+    font-size: 1.2em;
+    font-weight: 200;
+    text-transform: uppercase;
+}
+.board-score{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 20px;
+
+    text-align: center;
+    vertical-align: middle;
+    width: 60%;
+}
+
+.board-score .player-1 h2,
+.board-score .player-2 h2{
+    font-size: 2.3em;
+    font-weight: 700;
+    margin: 5px 0px;
+}
+
+.board-score .draw img{
+    width: 55px;
+    height: 55px;
+    margin: auto;
+}
+
+
+/* Modals */
+.btns-modal{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    width: 90%;
+}
+
+.btns-modal button{
+    width: 200px;
+    padding: 15px;
+    text-transform: uppercase;
+    font-weight: 600 ;
+    border-radius: 10px;
+    font-size: 1em;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.btns-modal button:nth-child(1){
+    background-color: #EF9519;
+    color: #fff;
+}
+
+.btns-modal button:nth-child(2){
+    background-color: #2AB4FD;
+    color: #fff;
+}
+
+
+@media screen and (max-width: 767px) {
+    
+    .modal-content {
+        background-image: url(../img/bg-modal.png);
+        background-position: top;
+        background-size: cover;
+        width: 90%;
+        height: auto;
+        padding: 40px;
+      
+    }
+    
+    .modal-title{
+        margin: 5px 0px;
+    }
+    
+    .modal-icon{
+        width: 100px;
+        margin-bottom: 10px;
+    }
+    
+    .modal-icon-lose{
+        width: 200px;
+    }
+    
+    
+    .player-name{
+        margin: 0px 0px 10px 0px;
+        font-size: 1em;
+
+    }
+    .board-score{
+        margin-bottom: 10px;
+        width: 100%;
+    }
+    
+    /* Modals */
+    .btns-modal{
+        gap: 10px;
+        width: 100%;
+    }
+    
+    .btns-modal button{
+        width: 100%;
+        border-radius: 5px;
+    }
+    
+}
