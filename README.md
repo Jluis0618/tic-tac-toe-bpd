@@ -14,7 +14,7 @@ Este es un juego de Tres en Raya, Cero Mata Cero, Gato, Tic Tac Toe, como le lla
 1. Clona este repositorio:
 
    ```bash
-   git clone https://github.com/tu_usuario/tic-tac-toe.git
+   git clone https://github.com/Jluis0618/tic-tac-toe.git
    
 2. Navega al directorio:
 
